@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 
 public class MainMenu {
     String[] options = {"Conversor de Monedas", "Conversor de Temperatura", "Conversor de Unidades"};
