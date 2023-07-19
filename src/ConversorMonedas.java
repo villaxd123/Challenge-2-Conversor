@@ -18,16 +18,27 @@ public class ConversorMonedas extends JFrame implements ActionListener, ValorCam
     };
     Font font = new Font("Consolas", Font.PLAIN, 15);
     int selectionComboBox = 0;
-    JLabel informationLabel = new JLabel("Ingrese el monto a convertir.");
-    JLabel conversionLabel = new JLabel();
-    JTextField textField = new JTextField("0", 10);
+    JLabel informationLabel = new JLabel("Ingrese el monto a convertir: ");
+    JLabel conversionLabel = new JLabel("El resultado saldrá aquí.");
+    JTextField textField = new JTextField("0", 20);
     JComboBox<String> comboBox = new JComboBox<>(currency);
     JButton button = new JButton("Convertir");
+    JButton backButton = new JButton("Regresar");
+    JPanel topPanel = new JPanel();
+    JPanel midPanel = new JPanel();
+    JPanel botPanel = new JPanel();
+    JPanel backPanel = new JPanel();
 
     public ConversorMonedas() throws HeadlessException {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLayout(new FlowLayout());
-        this.setBounds(0, 0, 500, 500);
+        this.setSize(525, 200);
+        this.setResizable(false);
+        this.setLayout(new GridLayout(4, 1));
+
+        topPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        midPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        botPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        backPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 
         informationLabel.setFont(font);
         conversionLabel.setFont(font);
@@ -41,14 +52,26 @@ public class ConversorMonedas extends JFrame implements ActionListener, ValorCam
         button.setFocusable(false);
         button.addActionListener(this);
 
-        this.add(informationLabel);
-        this.add(textField);
-        this.add(comboBox);
-        this.add(button);
-        this.add(conversionLabel);
+        backButton.setFont(font);
+        backButton.setFocusable(false);
+        backButton.addActionListener(this);
+
+        topPanel.add(informationLabel);
+        topPanel.add(textField);
+
+        midPanel.add(comboBox);
+        midPanel.add(button);
+
+        botPanel.add(conversionLabel);
+
+        backPanel.add(backButton);
+
+        this.add(topPanel);
+        this.add(midPanel);
+        this.add(botPanel);
+        this.add(backPanel);
 
         this.setTitle("Conversor de Monedas");
-        this.pack();
         this.setVisible(true);
     }
 
@@ -60,9 +83,14 @@ public class ConversorMonedas extends JFrame implements ActionListener, ValorCam
         if (e.getSource() == button) {
             try {
                 conversionLabel.setText(convertir(textField.getText(), selectionComboBox));
-            } catch (NumberFormatException exception){
-                messageError("Por favor ingrese un monto numérico (se permiten decimales)");
+            } catch (NumberFormatException exception) {
+                messageError("Por favor ingrese un monto numérico (se permiten decimales).");
             }
+        }
+        if (e.getSource() == backButton) {
+            this.dispose();
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.openOptionSelected();
         }
     }
 
