@@ -1,11 +1,13 @@
-package com.conversor.main;
+package com.conversor.model;
 
-import com.conversor.monedas.ConversorMonedas;
+import com.conversor.model.ConversorDistancias;
+import com.conversor.model.ConversorMonedas;
+import com.conversor.model.ConversorTemperaturas;
 
 import javax.swing.*;
 
 public class MainMenu {
-    String[] options = {"Conversor de Monedas", "Conversor de Temperatura", "Conversor de Unidades"};
+    String[] options = {"Conversor de Monedas", "Conversor de Temperatura", "Conversor de Distancias"};
     Object optionSelected;
     ImageIcon menuIcon = new ImageIcon("src/com/conversor/assets/menuIcon.png");
 
@@ -25,9 +27,9 @@ public class MainMenu {
         if (optionSelected == "Conversor de Monedas") {
             new ConversorMonedas();
         } else if (optionSelected == "Conversor de Temperatura") {
-            System.out.println(2);
-        } else if (optionSelected == "Conversor de Unidades") {
-            System.out.println(3);
+            new ConversorTemperaturas();
+        } else if (optionSelected == "Conversor de Distancias") {
+            new ConversorDistancias();
         }
     }
 }
