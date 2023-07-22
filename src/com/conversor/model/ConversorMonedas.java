@@ -1,6 +1,6 @@
-package com.conversor.monedas;
+package com.conversor.model;
 
-import com.conversor.main.MainMenu;
+import com.conversor.interfaces.ValorCambioMoneda;
 
 import javax.swing.*;
 import java.awt.*;
@@ -79,6 +79,8 @@ public class ConversorMonedas extends JFrame implements ActionListener, ValorCam
         this.setVisible(true);
     }
 
+    public void messageError(String s) {conversionLabel.setText(s);}
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == comboBox) {
@@ -102,9 +104,5 @@ public class ConversorMonedas extends JFrame implements ActionListener, ValorCam
     public String convertir(String monto, int option) {
         double valueConverted = Math.round(Double.parseDouble(monto) * ValorCambioMoneda.valorDeCambio[option] * 100.0) / 100.0;
         return "Resultado: " + valueConverted + " " + ValorCambioMoneda.monedaReferencia[option];
-    }
-
-    public void messageError(String s) {
-        conversionLabel.setText(s);
     }
 }
