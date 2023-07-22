@@ -1,9 +1,13 @@
+package com.conversor.main;
+
+import com.conversor.monedas.ConversorMonedas;
+
 import javax.swing.*;
 
 public class MainMenu {
     String[] options = {"Conversor de Monedas", "Conversor de Temperatura", "Conversor de Unidades"};
     Object optionSelected;
-    ImageIcon menuIcon = new ImageIcon("src/images/menuIcon.png");
+    ImageIcon menuIcon = new ImageIcon("src/com/conversor/assets/menuIcon.png");
 
     public MainMenu() {
         optionSelected = JOptionPane.showInputDialog(

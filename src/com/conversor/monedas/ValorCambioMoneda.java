@@ -1,3 +1,5 @@
+package com.conversor.monedas;
+
 public interface ValorCambioMoneda {
     double[] valorDeCambio = {
             0.14568375,

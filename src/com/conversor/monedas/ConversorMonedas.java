@@ -1,3 +1,7 @@
+package com.conversor.monedas;
+
+import com.conversor.main.MainMenu;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -84,7 +88,7 @@ public class ConversorMonedas extends JFrame implements ActionListener, ValorCam
             try {
                 conversionLabel.setText(convertir(textField.getText(), selectionComboBox));
             } catch (NumberFormatException exception) {
-                messageError("Por favor ingrese un monto numérico (se permiten decimales).");
+                messageError("Sólo números decimales (separados por punto).");
             }
         }
         if (e.getSource() == backButton) {
@@ -96,8 +100,8 @@ public class ConversorMonedas extends JFrame implements ActionListener, ValorCam
 
     @Override
     public String convertir(String monto, int option) {
-        double valueConverted = Math.round(Double.parseDouble(monto) * valorDeCambio[option] * 100.0) / 100.0;
-        return "Resultado: " + valueConverted + " " + monedaReferencia[option];
+        double valueConverted = Math.round(Double.parseDouble(monto) * ValorCambioMoneda.valorDeCambio[option] * 100.0) / 100.0;
+        return "Resultado: " + valueConverted + " " + ValorCambioMoneda.monedaReferencia[option];
     }
 
     public void messageError(String s) {
