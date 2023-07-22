@@ -17,6 +17,8 @@ public class ConversorDistancias extends ConversorBase implements ActionListener
             "Millas Náuticas"
     };
 
+    static ImageIcon icon = new ImageIcon("src/com/conversor/assets/icon3.png");
+
     public ConversorDistancias() throws HeadlessException {
         super.setSize(525, 350);
 
@@ -47,6 +49,7 @@ public class ConversorDistancias extends ConversorBase implements ActionListener
         this.add(backPanel);
 
         this.setTitle("Conversor de Distancias");
+        this.setIconImage(icon.getImage());
         this.setVisible(true);
     }
 

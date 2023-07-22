@@ -12,6 +12,8 @@ public class ConversorTemperaturas extends ConversorBase implements ActionListen
             "Grados Kelvin"
     };
 
+    static ImageIcon icon = new ImageIcon("src/com/conversor/assets/icon2.png");
+
     public ConversorTemperaturas() throws HeadlessException {
         comboBox = new JComboBox<>(OPTIONS);
         comboBox.setFont(FONT);
@@ -41,6 +43,7 @@ public class ConversorTemperaturas extends ConversorBase implements ActionListen
         this.add(backPanel);
 
         this.setTitle("Conversor de Temperaturas");
+        this.setIconImage(icon.getImage());
         this.setVisible(true);
     }
 

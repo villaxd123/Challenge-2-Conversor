@@ -7,8 +7,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ConversorMonedas extends JFrame implements ActionListener, ValorCambioMoneda {
-    String[] currency = {
+public class ConversorMonedas extends ConversorBase implements ActionListener, ValorCambioMoneda {
+    static String[] currency = {
             "Peso Boliviano a Dólares",
             "Peso Boliviano a Euros",
             "Peso Boliviano a Libras Esterlinas",
@@ -20,53 +20,25 @@ public class ConversorMonedas extends JFrame implements ActionListener, ValorCam
             "Yen Japonés a Peso Boliviano",
             "Won sur-coreano a Peso Boliviano"
     };
-    Font font = new Font("Consolas", Font.PLAIN, 15);
-    int selectionComboBox = 0;
-    JLabel informationLabel = new JLabel("Ingrese el monto a convertir: ");
-    JLabel conversionLabel = new JLabel("El resultado saldrá aquí.");
-    JTextField textField = new JTextField("0", 20);
-    JComboBox<String> comboBox = new JComboBox<>(currency);
-    JButton button = new JButton("Convertir");
-    JButton backButton = new JButton("Regresar");
-    JPanel topPanel = new JPanel();
-    JPanel midPanel = new JPanel();
-    JPanel botPanel = new JPanel();
-    JPanel backPanel = new JPanel();
+
+    static ImageIcon icon = new ImageIcon("src/com/conversor/assets/icon1.png");
 
     public ConversorMonedas() throws HeadlessException {
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(525, 200);
-        this.setResizable(false);
-        this.setLayout(new GridLayout(4, 1));
-
-        topPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-        midPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-        botPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-        backPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-
-        informationLabel.setFont(font);
-        conversionLabel.setFont(font);
-
-        textField.setFont(font);
-
-        comboBox.setFont(font);
+        comboBox = new JComboBox<>(currency);
+        comboBox.setFont(FONT);
         comboBox.addActionListener(this);
 
-        button.setFont(font);
-        button.setFocusable(false);
         button.addActionListener(this);
 
-        backButton.setFont(font);
-        backButton.setFocusable(false);
         backButton.addActionListener(this);
 
         topPanel.add(informationLabel);
-        topPanel.add(textField);
+        topPanel.add(TEXT_FIELD);
 
         midPanel.add(comboBox);
         midPanel.add(button);
 
-        botPanel.add(conversionLabel);
+        botPanel.add(conversionLabel1);
 
         backPanel.add(backButton);
 
@@ -76,10 +48,9 @@ public class ConversorMonedas extends JFrame implements ActionListener, ValorCam
         this.add(backPanel);
 
         this.setTitle("Conversor de Monedas");
+        this.setIconImage(icon.getImage());
         this.setVisible(true);
     }
-
-    public void messageError(String s) {conversionLabel.setText(s);}
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -88,9 +59,9 @@ public class ConversorMonedas extends JFrame implements ActionListener, ValorCam
         }
         if (e.getSource() == button) {
             try {
-                conversionLabel.setText(convertir(textField.getText(), selectionComboBox));
+                conversionLabel1.setText(convertir(TEXT_FIELD.getText(), selectionComboBox));
             } catch (NumberFormatException exception) {
-                messageError("Sólo números decimales (separados por punto).");
+                super.messageError();
             }
         }
         if (e.getSource() == backButton) {
