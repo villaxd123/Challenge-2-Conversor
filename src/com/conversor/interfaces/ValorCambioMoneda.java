@@ -1,4 +1,4 @@
-package com.conversor.monedas;
+package com.conversor.interfaces;
 
 public interface ValorCambioMoneda {
     double[] valorDeCambio = {
