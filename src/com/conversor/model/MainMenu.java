@@ -1,9 +1,5 @@
 package com.conversor.model;
 
-import com.conversor.model.ConversorDistancias;
-import com.conversor.model.ConversorMonedas;
-import com.conversor.model.ConversorTemperaturas;
-
 import javax.swing.*;
 
 public class MainMenu {
