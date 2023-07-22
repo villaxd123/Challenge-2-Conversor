@@ -1,4 +1,4 @@
-package com.conversor.main;
+package com.conversor;
 
 import com.conversor.model.MainMenu;
 
