@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="Challenge-2-Conversor:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Challenge_2_Conversor_jar</output-path>
+  <artifact type="jar" name="Challenge-2-Conversor">
+    <output-path>$PROJECT_DIR$/out/artifacts/Challenge_2_Conversor</output-path>
     <root id="archive" name="Challenge-2-Conversor.jar">
       <element id="module-output" name="Challenge-2-Conversor" />
     </root>
