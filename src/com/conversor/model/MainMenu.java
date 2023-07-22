@@ -5,7 +5,7 @@ import javax.swing.*;
 public class MainMenu {
     String[] options = {"Conversor de Monedas", "Conversor de Temperatura", "Conversor de Distancias"};
     Object optionSelected;
-    ImageIcon menuIcon = new ImageIcon("src/com/conversor/assets/menuIcon.png");
+    ImageIcon menuIcon = new ImageIcon("D:/Oracle ONE/Challenge/Challenge-2-Conversor/src/com/conversor/assets/menuIcon.png");
 
     public MainMenu() {
         optionSelected = JOptionPane.showInputDialog(

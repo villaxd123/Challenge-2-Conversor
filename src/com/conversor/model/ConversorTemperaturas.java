@@ -12,7 +12,7 @@ public class ConversorTemperaturas extends ConversorBase implements ActionListen
             "Grados Kelvin"
     };
 
-    static ImageIcon icon = new ImageIcon("src/com/conversor/assets/icon2.png");
+    static ImageIcon icon = new ImageIcon("D:/Oracle ONE/Challenge/Challenge-2-Conversor/src/com/conversor/assets/icon2.png");
 
     public ConversorTemperaturas() throws HeadlessException {
         comboBox = new JComboBox<>(OPTIONS);

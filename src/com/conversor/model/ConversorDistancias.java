@@ -17,7 +17,7 @@ public class ConversorDistancias extends ConversorBase implements ActionListener
             "Millas Náuticas"
     };
 
-    static ImageIcon icon = new ImageIcon("src/com/conversor/assets/icon3.png");
+    static ImageIcon icon = new ImageIcon("D:/Oracle ONE/Challenge/Challenge-2-Conversor/src/com/conversor/assets/icon3.png");
 
     public ConversorDistancias() throws HeadlessException {
         super.setSize(525, 350);

@@ -21,7 +21,7 @@ public class ConversorMonedas extends ConversorBase implements ActionListener, V
             "Won sur-coreano a Peso Boliviano"
     };
 
-    static ImageIcon icon = new ImageIcon("src/com/conversor/assets/icon1.png");
+    static ImageIcon icon = new ImageIcon("D:/Oracle ONE/Challenge/Challenge-2-Conversor/src/com/conversor/assets/icon1.png");
 
     public ConversorMonedas() throws HeadlessException {
         comboBox = new JComboBox<>(currency);
@@ -29,8 +29,9 @@ public class ConversorMonedas extends ConversorBase implements ActionListener, V
         comboBox.addActionListener(this);
 
         button.addActionListener(this);
-
         backButton.addActionListener(this);
+
+        informationLabel.setText("Ingrese el monto a convertir: ");
 
         topPanel.add(informationLabel);
         topPanel.add(TEXT_FIELD);
