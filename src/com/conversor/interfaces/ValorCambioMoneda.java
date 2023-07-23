@@ -1,5 +1,12 @@
 package com.conversor.interfaces;
 
+/**
+ * This interface has two attributes, and both are arrays,
+ * the 1st array stores all the values of currency change and the 2nd array stores all the symbols for the corresponding currency's
+ *
+ * @author Jorge Villafuerte
+ * @version 1.0
+ */
 public interface ValorCambioMoneda {
     double[] valorDeCambio = {
             0.14568375,
@@ -22,5 +29,12 @@ public interface ValorCambioMoneda {
             "Bs", "Bs", "Bs", "Bs", "Bs"
     };
 
+    /**
+     * This method expects to be implemented for the conversion of the currency using {@code monto} and {@code option}
+     *
+     * @param monto expects to be the string obtained from a {@link javax.swing.JTextField}.
+     * @param option expects to be an index from the {@link javax.swing.JComboBox}.
+     * @return A String with the text to be the output.
+     */
     String convertir(String monto, int option);
 }

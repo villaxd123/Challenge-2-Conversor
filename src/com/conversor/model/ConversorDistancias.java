@@ -5,6 +5,16 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * ConversorMonedas adopts the basic attributes from
+ * {@link ConversorBase} and modifies the final size of the window while,
+ * at the same time implementes {@link ActionListener}.
+ * <p>The class has a static vector String for the options who will be used on the {@link JComboBox} and the {@link ImageIcon}
+ * for the icon.</p>
+ *
+ * @author Jorge Villafuerte
+ * @version 1.0
+ */
 public class ConversorDistancias extends ConversorBase implements ActionListener {
     static String[] OPTIONS = {
             "Kilómetros",
@@ -19,6 +29,17 @@ public class ConversorDistancias extends ConversorBase implements ActionListener
 
     static ImageIcon icon = new ImageIcon("D:/Oracle ONE/Challenge/Challenge-2-Conversor/src/com/conversor/assets/icon3.png");
 
+    /**
+     * The Constructor uses the {@link JComboBox} with the previous static attribute, after this it will set the font
+     * of this (can't be set before because its null until is initialized).
+     * <p>The {@link ActionListener} is added to 3 elements: comboBox, button and backButton.</p>
+     * <p>The comboBox event is with the purpose of save the index on an inherited attribute.</p>
+     * <p>The buttons events are for perform an action that complete the purpose of the class.</p>
+     * <p>Finally, adds the components to the frame and sets the tittle, the icon and the visibility. </p>
+     * <br>
+     *
+     * @throws HeadlessException like the parent class, it can throw this exception.
+     */
     public ConversorDistancias() throws HeadlessException {
         super.setSize(525, 350);
 
@@ -53,7 +74,24 @@ public class ConversorDistancias extends ConversorBase implements ActionListener
         this.setVisible(true);
     }
 
-    public void convertir(String text, int option) {
+    /**
+     * <p>Parses the {@code monto} in a double, then creates a double[] array and 2 Strings.</p>
+     * <p>After the initialize of the variables the method uses an enhanced <em>switch-case</em> statement for the conversion.
+     * The array has 8 vales because there are just 8 types of distances, the first 4 values will be used on the 1st String
+     * abd the next 4 values for the 2nd String.</p>
+     * <p>The conversion is made based on the {@code option} parameter who has stored the index of the comboBox.</p>
+     * <p>When the conversion is done, the values are rounded using the following formula:</p>
+     * <pre>
+     *     Math.round(x * 100.0) / 100.0
+     * </pre>
+     * <p>The objective is to get a double with 2 decimals.</p>
+     * <p>Finally, the result is added to the String using html to make line-breaks using HTML and the 2 labels calls to
+     * setText to use the new result and show in the final interface.</p>
+     *
+     * @param text is the String value from the TEXT_FIELD.
+     * @param option is the index from the comboBox.
+     */
+    private void convertir(String text, int option) {
         double inputConverted = Double.parseDouble(text);
         double[] valuesConverted = {0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -164,6 +202,17 @@ public class ConversorDistancias extends ConversorBase implements ActionListener
         conversionLabel2.setText(resultB);
     }
 
+    /**
+     * Override the actionPerformed from {@link ActionListener} and performs actions based on the source of the event
+     * captured.
+     * <p>The 1st source checked is the comboBox, this will store its index on a variable.</p>
+     * <p>The 2nd source checked is the button, this will call the convertir() method sending 2 parameters. This is
+     * surrounded with a <em>try-catch</em> expecting to catch a {@link NumberFormatException}, if the exception is
+     * detected will call a parent method.</p>
+     * <p>The last source checked is the backButton, this will dispose the actual frame and will create a new MainMenu.</p>
+     *
+     * @param e the event to be checked with the if statements.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == comboBox) {
