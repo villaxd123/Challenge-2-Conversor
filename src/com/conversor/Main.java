@@ -9,6 +9,12 @@ import com.conversor.model.MainMenu;
  * @version 1.0
  */
 public class Main {
+
+    /**
+     * This method creates a new instance of {@link MainMenu} and calls to openOptionSelected().
+     *
+     * @param args default parameter.
+     */
     public static void main(String[] args) {
         MainMenu mainMenu = new MainMenu();
         mainMenu.openOptionSelected();

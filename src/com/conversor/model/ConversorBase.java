@@ -10,18 +10,57 @@ import java.awt.*;
  * @version 1.0
  */
 public class ConversorBase extends JFrame {
+    /**
+     * Consolas Font type Plain and size 15.
+     */
     protected static Font FONT = new Font("Consolas", Font.PLAIN, 15);
+    /**
+     * Variable that stores the index of a comboBox.
+     */
     protected int selectionComboBox = 0;
+    /**
+     * The 1st label that shows the user what is needed.
+     */
     protected JLabel informationLabel = new JLabel();
+    /**
+     * The 1st label that shows the result of the conversion.
+     */
     protected JLabel conversionLabel1 = new JLabel();
+    /**
+     * The 2nd label that shows the result of the conversion, only used if two rows are as an output.
+     */
     protected JLabel conversionLabel2 = new JLabel();
+    /**
+     * The Box where the input is placed.
+     */
     protected static JTextField TEXT_FIELD = new JTextField("0", 20);
+    /**
+     * Declaration of the comboBox without the initialization.
+     */
     protected JComboBox<String> comboBox;
+    /**
+     * Button that performs the actions for the conversion.
+     */
     protected JButton button = new JButton("Convertir");
+    /**
+     * Button that performs the action to return to the dialog interface.
+     */
     protected JButton backButton = new JButton("Regresar");
+    /**
+     * {@link JPanel} who group the informationLabel and TEXT_FIELD.
+     */
     protected JPanel topPanel = new JPanel();
+    /**
+     * {@link JPanel} who group the comboBox and the 1st button.
+     */
     protected JPanel midPanel = new JPanel();
+    /**
+     * {@link JPanel} who group both conversionLabel. If the 2nd label isn't needed, it will not be added.
+     */
     protected JPanel botPanel = new JPanel();
+    /**
+     * This {@link JPanel} has the backButton.
+     */
     protected JPanel backPanel = new JPanel();
 
     /**

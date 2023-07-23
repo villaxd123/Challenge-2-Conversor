@@ -8,6 +8,9 @@ package com.conversor.interfaces;
  * @version 1.0
  */
 public interface ValorCambioMoneda {
+    /**
+     * This array stores the different values for the currency conversion.
+     */
     double[] valorDeCambio = {
             0.14568375,
             0.1326892,
@@ -20,6 +23,9 @@ public interface ValorCambioMoneda {
             0.048421795,
             0.0052568927
     };
+    /**
+     * This array stores the different symbols that will be attached to the result of the conversion.
+     */
     String[] monedaReferencia = {
             "$",
             "€",
