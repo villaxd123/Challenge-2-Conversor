@@ -66,7 +66,8 @@ public class ConversorBase extends JFrame {
     /**
      * The constructor starts initializing its own {@link JFrame} setting the DefaultCloseOperation, size of the window,
      * if it can be resizable, the main Layout as a Grid, then initialize the attributes with the same font and
-     * a FlowLayout for every JPanel that it has, for the buttons the focusability is set on false.
+     * a FlowLayout for every JPanel that it has, for the buttons the focusability is set on false and the location
+     * relative is set to null to perform the position where the window will apear.
      *
      * @throws HeadlessException will be thrown only when the following code is called on an environment that depends
      * on a keyboard, display or mouse doesn't have it.
@@ -78,6 +79,7 @@ public class ConversorBase extends JFrame {
         this.setSize(525, 200);
         this.setResizable(false);
         this.setLayout(new GridLayout(4, 1));
+        this.setLocationRelativeTo(null);
 
         topPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         midPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
