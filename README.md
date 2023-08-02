@@ -34,7 +34,7 @@ Características Extra (opcional y ligado a imaginación propia):
 <p align="center">Interfaz del conversor de distancias:</p>
 <p align="center"><img src=https://github.com/villaxd123/Challenge-2-Conversor/assets/29488884/13325100-1e58-4186-9a1a-3bfd167d4c13 alt="Conversor de Distancias" /></p>
 <br>
-<p align="center">El conversor ya fue exportado en ejecutables, puedes revisar dichos archivos <a href=https://github.com/villaxd123/Challenge-2-Conversor/releases/tag/v1.0>aquí</a>.</p>
+<p align="center">El conversor ya fue exportado en ejecutables, puedes revisar dichos archivos <a href=https://github.com/villaxd123/Challenge-2-Conversor/releases/latest>aquí</a>.</p>
 
 # English
 ## Converter
@@ -72,4 +72,4 @@ Extra Features (optional and linked to own imagination):
 <p align="center">Distance converter interface:</p>
 <p align="center"><img src=https://github.com/villaxd123/Challenge-2-Conversor/assets/29488884/13325100-1e58-4186-9a1a-3bfd167d4c13 alt="Distance Converter" /></p>
 <br>
-<p align="center">The converter has already been exported in executables, you can review those files <a href=https://github.com/villaxd123/Challenge-2-Conversor/releases/tag/v1.0>here</a>.</p>
+<p align="center">The converter has already been exported in executables, you can review those files <a href=https://github.com/villaxd123/Challenge-2-Conversor/releases/latest>here</a>.</p>
